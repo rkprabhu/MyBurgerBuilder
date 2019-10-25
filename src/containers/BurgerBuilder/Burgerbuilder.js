@@ -93,6 +93,10 @@ class Burgerbuilder extends Component {
             purchasing : false
         })
     }
+
+    purchaseContinueHandler = () => {
+        alert("you Continue!!!")
+    }
     
     render() {
         const disabledInfo = {
@@ -110,7 +114,7 @@ class Burgerbuilder extends Component {
             <Auxi>
                 
                 <Modal show={this.state.purchasing} hideHandler={this.hideModalHandler} >
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                    <OrderSummary price={this.state.totalPrice} purchaseCancelled={this.hideModalHandler}  purchasedContinue={this.purchaseContinueHandler} ingredients={this.state.ingredients}/>
                 </Modal>
                 <Burger  ingredients={this.state.ingredients}/>
                 <BuildControls ordered={this.purchaseHandler} purchasable={this.state.purchasable} disabled={disabledInfo} ingredientsAdded={this.addIngredientHandler} ingredientsRemoved={this.removeIngredientHandler} price={this.state.totalPrice}/>

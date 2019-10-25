@@ -7,7 +7,7 @@ const Modal = (props) => {
 
     return (
         <Auxi>
-        <Backdrop show={props.show} hideHandler={props.hideHandler}/>
+        <Backdrop show={props.show} clicked={props.hideHandler}/>
         <div 
             style={{display: props.show ? 'block' : 'none'}} 
             className={classes.Modal}>
